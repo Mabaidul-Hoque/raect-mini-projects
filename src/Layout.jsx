@@ -8,12 +8,14 @@ const Layout = () => {
 
   return (
     <div id="layout">
-      <nav>Navbar</nav>
-      <div className="flex bg-red-500">
+      <nav className="text-center bg-gray-700 h-20 text-white p-4">Navbar</nav>
+      <div className="flex flex-col md:flex-row gap-5 p-10">
         <SideNavbar />
         <main>{pathname === "/" ? <Home /> : <Outlet />}</main>
       </div>
-      <footer>Footer</footer>
+      <footer className="text-center bg-gray-700 h-20 text-white p-4">
+        Footer
+      </footer>
     </div>
   );
 };
