@@ -1,27 +1,47 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const pageTitles = [
-  "ExapndingCards",
-  "Progress Steps",
-  "Rotating Navigation Animation",
-  "Hidden Search Widget",
-  "Blurry Loading",
-  "Scroll Animation",
-  "Split Landing Page",
-  "Form Wave",
-  "Sound Board",
-  "Dad Jokes",
-  "ExapndingCards",
-  "Progress Steps",
-  "Rotating Navigation Animation",
-  "Hidden Search Widget",
-  "Blurry Loading",
-  "Scroll Animation",
-  "Split Landing Page",
-  "Form Wave",
-  "Sound Board",
-  "Dad Jokes",
+const pages = [
+  {
+    title: "ExapndingCards",
+    route: "/expandingCards",
+  },
+  {
+    title: "Progress Steps",
+    route: "ProgressSteps",
+  },
+  {
+    title: "Rotating Navigation Animation",
+    route: "",
+  },
+  {
+    title: "Hidden Search Widget",
+    route: "",
+  },
+  {
+    title: "Blurry Loading",
+    route: "",
+  },
+  {
+    title: "Scroll Animation",
+    route: "",
+  },
+  {
+    title: "Split Landing Page",
+    route: "",
+  },
+  {
+    title: "Form Wave",
+    route: "",
+  },
+  {
+    title: "Sound Board",
+    route: "",
+  },
+  {
+    title: "Dad Jokes",
+    route: "",
+  },
 ];
 const SideNavbar = () => {
   const [menu, setMenu] = useState(false);
@@ -33,10 +53,6 @@ const SideNavbar = () => {
     setMenu(false);
   };
 
-  const addActive = (index) => {
-    if (topicIndx === index) return "bg-blue";
-    else return "bg-white";
-  };
   return (
     <>
       {/* MOBILE RESPONSIVE MENU */}
@@ -74,9 +90,9 @@ const SideNavbar = () => {
               </button>
             </div>
             <ul className="flex flex-col gap-4">
-              {pageTitles.map((title) => (
-                <li onClick={handleClose} key={title}>
-                  {title}
+              {pages.map((page) => (
+                <li onClick={handleClose} key={page.title}>
+                  {page.title}
                 </li>
               ))}
             </ul>
@@ -84,11 +100,12 @@ const SideNavbar = () => {
         )}
       </div>
       {/* LEFT SIDE NAVBAR */}
-      <div className=" hidden md:block md:w-1/4 xl:w-1/5 border-t border-r border-b border-gray-300 p-4 ">
+      <div className="hidden md:block w-full 5 border-t border-r border-b border-gray-300">
         <ul className="flex flex-col gap-4">
-          {pageTitles.map((title, index) => (
-            <li
-              key={title}
+          {pages.map((page, index) => (
+            <Link
+              to={page.route}
+              key={page.title}
               onClick={() => setActiveIndex(index)}
               className={`${
                 activeIndex === index
@@ -96,8 +113,8 @@ const SideNavbar = () => {
                   : "bg-white text-black hover:bg-blue-300"
               } hover:cursor-pointer hover:text-white p-2 rounded`}
             >
-              <Link to={"/expandingCards"}>{title}</Link>
-            </li>
+              <li>{page.title}</li>
+            </Link>
           ))}
         </ul>
       </div>

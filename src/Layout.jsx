@@ -9,9 +9,13 @@ const Layout = () => {
   return (
     <div id="layout">
       <nav className="text-center bg-gray-700 h-20 text-white p-4">Navbar</nav>
-      <div className="flex flex-col md:flex-row gap-5 p-10">
-        <SideNavbar />
-        <main>{pathname === "/" ? <Home /> : <Outlet />}</main>
+      <div className="w-screen flex flex-col md:flex-row gap-5 p-10">
+        <div className="md:w-1/4 xl:w-1/5">
+          <SideNavbar />
+        </div>
+        <div className="w-screen md:w-3/4 xl:w-4/5">
+          <main>{pathname === "/" ? <Home /> : <Outlet />}</main>
+        </div>
       </div>
       <footer className="text-center bg-gray-700 h-20 text-white p-4">
         Footer
