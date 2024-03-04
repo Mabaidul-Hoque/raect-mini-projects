@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const pageTitles = [
   "ExapndingCards",
@@ -24,11 +25,17 @@ const pageTitles = [
 ];
 const SideNavbar = () => {
   const [menu, setMenu] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const handleMenuClick = () => {
     setMenu((prev) => !prev);
   };
   const handleClose = () => {
     setMenu(false);
+  };
+
+  const addActive = (index) => {
+    if (topicIndx === index) return "bg-blue";
+    else return "bg-white";
   };
   return (
     <>
@@ -79,8 +86,18 @@ const SideNavbar = () => {
       {/* LEFT SIDE NAVBAR */}
       <div className=" hidden md:block md:w-1/4 xl:w-1/5 border-t border-r border-b border-gray-300 p-4 ">
         <ul className="flex flex-col gap-4">
-          {pageTitles.map((title) => (
-            <li key={title}>{title}</li>
+          {pageTitles.map((title, index) => (
+            <li
+              key={title}
+              onClick={() => setActiveIndex(index)}
+              className={`${
+                activeIndex === index
+                  ? "bg-blue-500 text-white"
+                  : "bg-white text-black hover:bg-blue-300"
+              } hover:cursor-pointer hover:text-white p-2 rounded`}
+            >
+              <Link to={"/expandingCards"}>{title}</Link>
+            </li>
           ))}
         </ul>
       </div>
