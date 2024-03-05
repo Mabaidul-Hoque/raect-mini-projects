@@ -17,12 +17,15 @@ const ProgressSteps = () => {
   return (
     <div className="flex justify-center items-cente pt-40">
       <div className="flex flex-col justify-center items-center gap-8">
+        {/* PROGRESS CONTAINER */}
         <div className="flex items-center">
+          {/* ONE */}
           <div
             className={`w-10 h-10 border-4  border-blue-700 p-4 rounded-[50%] flex items-center justify-center`}
           >
             <p>1</p>
           </div>
+          {/* TWO */}
           <div
             className={`w-20 h-2 border-b-4 ${
               step >= 2 ? "border-blue-700" : "border-gray-500"
@@ -35,6 +38,7 @@ const ProgressSteps = () => {
           >
             <p>2</p>
           </div>
+          {/* THREE */}
           <div
             className={`w-20 h-2 border-b-4 ${
               step >= 3 ? "border-blue-700" : "border-gray-500"
@@ -43,10 +47,11 @@ const ProgressSteps = () => {
           <div
             className={`${
               step >= 3 ? "border-blue-700" : "border-gray-500"
-            } w-10 h-10 border-4 border-gray-500 p-4 rounded-[50%] flex items-center justify-center`}
+            } w-10 h-10 border-4 p-4 rounded-[50%] flex items-center justify-center`}
           >
             <p>3</p>
           </div>
+          {/* FOUR */}
           <div
             className={`w-20 h-2 border-b-4 ${
               step >= 4 ? "border-blue-700" : "border-gray-500"
@@ -55,7 +60,7 @@ const ProgressSteps = () => {
           <div
             className={`${
               step >= 4 ? "border-blue-700" : "border-gray-500"
-            } w-10 h-10 border-4 border-gray-500 p-4 rounded-[50%] flex items-center justify-center`}
+            } w-10 h-10 border-4  p-4 rounded-[50%] flex items-center justify-center`}
           >
             <p>4</p>
           </div>

@@ -8,44 +8,44 @@ const pages = [
   },
   {
     title: "Progress Steps",
-    route: "ProgressSteps",
+    route: "/ProgressSteps",
   },
   {
     title: "Rotating Navigation Animation",
-    route: "",
+    route: "/rotatingNavigation",
   },
   {
     title: "Hidden Search Widget",
-    route: "",
+    route: "/hiddenSearchWidget",
   },
   {
     title: "Blurry Loading",
-    route: "",
+    route: "/blurryLoading",
   },
   {
     title: "Scroll Animation",
-    route: "",
+    route: "/scrollAnimation",
   },
   {
     title: "Split Landing Page",
-    route: "",
+    route: "/splitLandingPage",
   },
   {
     title: "Form Wave",
-    route: "",
+    route: "/formWave",
   },
   {
     title: "Sound Board",
-    route: "",
+    route: "/soundBoard",
   },
   {
     title: "Dad Jokes",
-    route: "",
+    route: "/dadJokes",
   },
 ];
 const SideNavbar = () => {
   const [menu, setMenu] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const handleMenuClick = () => {
     setMenu((prev) => !prev);
   };
